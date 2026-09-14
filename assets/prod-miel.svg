@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#F7F0DA"/>
+  <ellipse cx="300" cy="366" rx="150" ry="24" fill="#E9E0C3"/>
+  <path d="M250 376 v18 c0 52 34 60 66 60 h34 c0 -88 0 -120 -6 -200 c-40 0 -62 26 -68 50 c-32 2 -38 34 -26 72 Z" fill="#FFC61A"/>
+  <path d="M344 254 c38 0 60 40 60 84 v26 c-58 0 -88 -26 -106 -74 c16 -24 30 -36 46 -36 Z" fill="#FFC61A"/>
+  <rect x="240" y="74" width="66" height="26" rx="7" fill="#1C5B2E"/>
+  <path d="M273 74 q24 -22 44 -10 q-6 24 -30 32 q-14 -8 -14 -22 Z" fill="#7FC47F"/>
+  <rect x="256" y="100" width="34" height="40" rx="6" fill="#1C5B2E" opacity=".85"/>
+  <rect x="318" y="120" width="42" height="26" rx="7" fill="#FFFDF4"/>
+  <rect x="332" y="116" width="14" height="14" rx="4" fill="#1C5B2E"/>
+  <ellipse cx="452" cy="380" rx="26" ry="18" fill="#FFD75E"/>
+  <ellipse cx="508" cy="374" rx="14" ry="10" fill="#FFC61A"/>
+  <path d="M430 368 c-10 -6 -22 -4 -30 2" stroke="#2E7D32" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M452 380 c-10 -8 -14 -20 -10 -30 c12 2 18 12 14 24 Z" fill="#8a6300" opacity=".55"/>
+</svg>

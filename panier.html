@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TerraChamp · Panier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav" data-nav>
+  <div class="container nav__in">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><img src="assets/logo.svg" alt="TerraChamp"></span>
+      TerraChamp
+    </a>
+    <nav class="nav__links">
+      <a href="index.html">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="tableau-de-bord.html">Espace vendeur</a>
+      <a href="#">Services</a>
+      <a href="#">À propos</a>
+    </nav>
+    <div class="nav__tools">
+      <label class="nav__search">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="Tomates, igname, maïs…">
+      </label>
+      <a href="#" class="btn btn--yellow btn--sm">Vendre</a>
+      <a href="#" class="btn btn--green btn--sm">Se connecter</a>
+      <a href="panier.html" class="cart-btn" aria-label="Panier">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12l1.2 12.2a1.8 1.8 0 0 1-1.8 1.8H6.6a1.8 1.8 0 0 1-1.8-1.8L6 7Z"/><path d="M9 10V5.5a3 3 0 0 1 6 0V10"/></svg>
+        <span class="badge">3</span>
+      </a>
+      <button class="burger" data-menu-btn aria-label="Menu" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="nav-menu" data-menu>
+    <div class="m-search">
+      <label class="search-field">
+        <svg class="icon icon--sm" viewBox="0 0 24 24" style="color:var(--spring)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="Tomates, igname, maïs…">
+      </label>
+    </div>
+    <a href="index.html">Accueil</a>
+    <a href="catalogue.html">Catalogue</a>
+    <a href="tableau-de-bord.html">Espace vendeur</a>
+    <a href="#">Services</a>
+    <a href="#">À propos</a>
+    <div class="actions">
+      <a href="#" class="btn btn--yellow">Vendre</a>
+      <a href="#" class="btn btn--green">Se connecter</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STEPS ============ -->
+<div class="stepper">
+  <div class="step-chip is-on">
+    <span class="n">1</span>
+    <span class="lbl">Panier</span>
+  </div>
+  <span class="step-line is-on"></span>
+  <div class="step-chip">
+    <span class="n">2</span>
+    <span class="lbl">Livraison</span>
+  </div>
+  <span class="step-line"></span>
+  <div class="step-chip">
+    <span class="n">3</span>
+    <span class="lbl">Paiement</span>
+  </div>
+  <span class="step-line"></span>
+  <div class="step-chip">
+    <span class="n">4</span>
+    <span class="lbl">Confirmation</span>
+  </div>
+</div>
+
+<!-- ============ PANIER ============ -->
+<div class="container cart">
+
+  <!-- Articles -->
+  <div>
+    <div class="section__head" style="margin-bottom:20px">
+      <div>
+        <span class="eyebrow">Ta sélection</span>
+        <h2>Panier <span class="muted" style="font-size:1rem;font-weight:600">(3 articles)</span></h2>
+      </div>
+      <a href="catalogue.html" class="btn btn--ghost">+ Ajouter d'autres produits</a>
+    </div>
+
+    <div class="cart-items" data-anim="group">
+      <div class="cart-item">
+        <div class="th"><img src="assets/prod-tomates.svg" alt="Tomates fraîches" style="width:88px"></div>
+        <div>
+          <div class="t">Tomates fraîches — cagette 25 kg</div>
+          <div class="s">Ferme Awavi · Allada</div>
+        </div>
+        <div class="right">
+          <div class="qty"><button>−</button><span>2</span><button>+</button></div>
+          <div class="pr">30 000 FCFA</div>
+          <button class="rm" aria-label="Retirer">
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <div class="th"><img src="assets/prod-ble.svg" alt="Maïs blanc" style="width:88px"></div>
+        <div>
+          <div class="t">Maïs blanc — sac de 100 kg</div>
+          <div class="s">Coop du Zou · Bohicon</div>
+        </div>
+        <div class="right">
+          <div class="qty"><button>−</button><span>1</span><button>+</button></div>
+          <div class="pr">28 000 FCFA</div>
+          <button class="rm" aria-label="Retirer">
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-item">
+        <div class="th"><img src="assets/prod-miel.svg" alt="Miel d'Atacora" style="width:88px"></div>
+        <div>
+          <div class="t">Miel d'Atacora — pot de 500 g</div>
+          <div class="s">Rucher d'Atacora · Tanguiéta</div>
+        </div>
+        <div class="right">
+          <div class="qty"><button>−</button><span>3</span><button>+</button></div>
+          <div class="pr">7 500 FCFA</div>
+          <button class="rm" aria-label="Retirer">
+            <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- + Critères qualité -->
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px">
+      <span class="chip"><svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>Mobile Money MTN, Moov</span>
+      <span class="chip"><svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Vendeurs vérifiés</span>
+      <span class="chip"><svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h10v18H6a2 2 0 0 1-2-2Z"/><path d="M16 3h2a2 2 0 0 1 2 2v12"/></svg>Cash à la livraison</span>
+    </div>
+  </div>
+
+  <!-- Résumé -->
+  <aside class="summary" data-anim="fade">
+    <h3>Résumé de la commande</h3>
+    <div class="promo">
+      <input type="text" placeholder="Code promo (ex. ATACORA)">
+      <button class="btn btn--outline btn--sm">Appliquer</button>
+    </div>
+
+    <div class="srow"><span>Sous-total</span><b>65 500 FCFA</b></div>
+    <div class="srow"><span>Livraison · Cotonou & environs</span><b>2 500 FCFA</b></div>
+    <div class="srow"><span>Frais de service</span><b>0 FCFA</b></div>
+    <div class="srow total"><span>Total</span><span>68 000 FCFA</span></div>
+    <div class="muted" style="font-size:.78rem;text-align:right;margin-top:4px">TVA 18 % incluse · Miel retiré sur place</div>
+
+    <div style="margin:20px 0 8px;font-size:.88rem;font-weight:800;color:var(--forest)">Mode de livraison</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+      <label class="delivery-opt is-on">
+        <input type="radio" name="dlv" checked>
+        <span>Standard<small>2 à 4 jours · offerte dès 80 000 FCFA</small></span>
+      </label>
+      <label class="delivery-opt">
+        <input type="radio" name="dlv">
+        <span>Express<small>24 h sur Cotonou · +5 000 FCFA</small></span>
+      </label>
+    </div>
+
+    <a href="#" class="btn btn--yellow btn--block btn--lg">Confirmer la commande · 68 000 FCFA</a>
+    <div class="secure">
+      <svg class="icon icon--sm" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3Z"/></svg>
+      Paiement Mobile Money (MTN, Moov Money) ou à la livraison — sécurisé par TerraChamp Pay
+    </div>
+    <a href="catalogue.html" class="btn btn--ghost btn--block" style="margin-top:10px">Continuer mes achats</a>
+  </aside>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" style="margin-top:56px">
+  <div class="container footer__in">
+    <div class="footer__brand">
+      <a class="brand" href="index.html"><span class="brand__mark"><img src="assets/logo.svg" alt=""></span>TerraChamp</a>
+      <p>La marketplace 100 % agricole du Bénin. Achetez et vendez direct, du champ jusqu'à la table.</p>
+    </div>
+    <div>
+      <h4>Marketplace</h4>
+      <ul><li><a href="catalogue.html">Catalogue produits</a></li><li><a href="#">Catégories</a></li><li><a href="#">Bonnes affaires</a></li><li><a href="#">Vente en gros</a></li></ul>
+    </div>
+    <div>
+      <h4>Vendeurs</h4>
+      <ul><li><a href="tableau-de-bord.html">Espace vendeur</a></li><li><a href="#">Comment vendre</a></li><li><a href="#">Tarifs & commissions</a></li><li><a href="#">Aide livraison</a></li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul><li><a href="#">Centre d'aide</a></li><li><a href="#">Nous écrire</a></li><li><a href="#">Blog agricole</a></li><li><a href="#">Presse</a></li></ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2026 TerraChamp Bénin — Cotonou</span>
+    <span>Mentions légales · CGU · Confidentialité</span>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

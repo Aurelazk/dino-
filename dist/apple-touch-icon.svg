@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Panotik">
-  <rect width="180" height="180" rx="40" fill="#2e2a24"/>
-  <path
-    fill="#c19a6b"
-    d="M52 36h42c21.5 0 35.5 12.8 35.5 31.5S115.5 99 94 99H72.5v45H52V36zm20.5 45h20c10.2 0 16.2-5.4 16.2-13.2S102.7 54.5 92.5 54.5h-20V81z"
-  />
-</svg>

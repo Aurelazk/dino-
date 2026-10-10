@@ -19,6 +19,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
+import { demoShop } from "@/lib/demo-data";
 import { cn, formatXOF } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -35,22 +36,25 @@ const demoOrders = [
 ];
 
 export default async function DemoVendeurPage() {
-  const shop = await prisma.sellerProfile.findFirst({
-    orderBy: { createdAt: "asc" },
-    include: {
-      account: { select: { user: { select: { firstName: true, lastName: true } } } },
-      products: {
-        where: { status: "ACTIVE" },
-        orderBy: { publishedAt: "desc" },
-        take: 8,
+  const shop =
+    (await prisma.sellerProfile
+      .findFirst({
+        orderBy: { createdAt: "asc" },
         include: {
-          category: { select: { name: true, icon: true } },
-          sellerProfile: { select: { shopName: true, city: true, slug: true } },
-          images: { orderBy: { position: "asc" }, take: 1 },
+          account: { select: { user: { select: { firstName: true, lastName: true } } } },
+          products: {
+            where: { status: "ACTIVE" },
+            orderBy: { publishedAt: "desc" },
+            take: 8,
+            include: {
+              category: { select: { name: true, icon: true } },
+              sellerProfile: { select: { shopName: true, city: true, slug: true } },
+              images: { orderBy: { position: "asc" }, take: 1 },
+            },
+          },
         },
-      },
-    },
-  }).catch(() => null);
+      })
+      .catch(() => null)) ?? demoShop;
 
   if (!shop) {
     return (

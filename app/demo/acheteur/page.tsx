@@ -4,8 +4,9 @@ import { Search } from "lucide-react";
 import { prisma } from "@/lib/prisma";
 import { DemoBanner } from "@/components/demo/demo-banner";
 import { SiteHeader } from "@/components/layout/site-header";
-import { ProductCard } from "@/components/catalog/product-card";
+import { ProductCard, type ProductCardData } from "@/components/catalog/product-card";
 import { CategoryIcon } from "@/components/catalog/category-icon";
+import { demoCategories, demoProducts } from "@/lib/demo-data";
 import { EmptyState } from "@/components/ui/empty-state";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -36,8 +37,24 @@ export default async function DemoAcheteurPage() {
     }),
   ]).catch(() => null);
 
-  const products = data?.[0] ?? [];
-  const categories = data?.[1] ?? [];
+  const products: ProductCardData[] =
+    data && data[0].length > 0
+      ? data[0].map((p) => ({
+          title: p.title,
+          slug: p.slug,
+          price: p.price,
+          unit: p.unit,
+          isOrganic: p.isOrganic,
+          isFresh: p.isFresh,
+          imageUrl: p.images[0]?.url ?? null,
+          ratingAvg: p.ratingAvg,
+          ratingCount: p.ratingCount,
+          category: p.category,
+          sellerProfile: p.sellerProfile,
+        }))
+      : demoProducts;
+
+  const categories = data && data[1].length > 0 ? data[1] : demoCategories;
 
   return (
     <div className="min-h-screen">
@@ -80,22 +97,7 @@ export default async function DemoAcheteurPage() {
         ) : (
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {products.map((p) => (
-              <ProductCard
-                key={p.id}
-                product={{
-                  title: p.title,
-                  slug: p.slug,
-                  price: p.price,
-                  unit: p.unit,
-                  isOrganic: p.isOrganic,
-                  isFresh: p.isFresh,
-                  imageUrl: p.images[0]?.url ?? null,
-                  ratingAvg: p.ratingAvg,
-                  ratingCount: p.ratingCount,
-                  category: p.category,
-                  sellerProfile: p.sellerProfile,
-                }}
-              />
+              <ProductCard key={p.slug} product={p} />
             ))}
           </div>
         )}

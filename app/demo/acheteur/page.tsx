@@ -10,13 +10,15 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Démo Acheteur",
   robots: { index: false },
 };
 
 export default async function DemoAcheteurPage() {
-  const [products, categories] = await Promise.all([
+  const data = await Promise.all([
     prisma.product.findMany({
       where: { status: "ACTIVE" },
       orderBy: { publishedAt: "desc" },
@@ -32,7 +34,10 @@ export default async function DemoAcheteurPage() {
       orderBy: { sortOrder: "asc" },
       select: { name: true, slug: true, icon: true },
     }),
-  ]);
+  ]).catch(() => null);
+
+  const products = data?.[0] ?? [];
+  const categories = data?.[1] ?? [];
 
   return (
     <div className="min-h-screen">

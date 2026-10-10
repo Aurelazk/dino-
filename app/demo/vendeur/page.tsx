@@ -21,6 +21,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
 import { cn, formatXOF } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Démo Vendeur",
   robots: { index: false },
@@ -48,7 +50,7 @@ export default async function DemoVendeurPage() {
         },
       },
     },
-  });
+  }).catch(() => null);
 
   if (!shop) {
     return (

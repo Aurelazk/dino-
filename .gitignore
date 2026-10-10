@@ -1,7 +1,26 @@
-node_modules
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
 
-# Vite envs (secrets publics côté build)
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# env
 .env
-.env.local
-.env.*
-!.env.example
+.env*.local
+
+# misc
+.DS_Store
+*.pem
+coverage
+.vercel
+*.tsbuildinfo
+
+# prisma
+/prisma/migrations/dev.db*
